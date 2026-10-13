@@ -1,37 +1,31 @@
 # Airbnb-style Web Page
 
-This project aims to replicate the Airbnb website's user interface using HTML and CSS. It consists of a static web page with navigation, search bar, filters, and a display of property listings.
-<img width="1261" alt="airbnbClone" src="https://github.com/Atharvaapande/Airbnb-resources/assets/128508298/7866bbe5-114d-47a3-8e38-cb31f49a8577">
+This repository is a static HTML/CSS interface inspired by an accommodation marketplace. It includes a navigation bar, search controls, filter artwork, listing cards, and local image/SVG assets.
 
+## Contents
 
-## Getting Started
+- `index.html` - page markup and listing content.
+- `airbnbstyle.css` - layout, responsive styling, and visual treatment.
+- `*.svg`, `*.jpeg`, and `*.webp` - interface and listing assets.
 
-To view the project locally, follow these steps:
+This is an educational reproduction and is not affiliated with Airbnb. Branding and third-party imagery should be replaced or used only with appropriate permission.
 
-1. Clone the repository to your local machine:
+## Run locally
 
-   ```bash
-   git clone https://github.com/your-username/Airbnb-resources.git
-   ```
+No build system is required. Open `index.html` in a browser, or serve the directory:
 
-2. Navigate to the project directory:
+```powershell
+python -m http.server 8000
+```
 
-   ```bash
-   cd Airbnb-resources
-   ```
+Then visit `http://localhost:8000`. A local server is recommended so asset paths behave consistently.
 
-3. Open the `index.html` file in your preferred web browser.
+## Development
 
-## Usage
+Keep asset paths relative, test the page at narrow and wide viewport sizes, and check keyboard focus, readable contrast, image alternatives, and layout overflow. Avoid adding third-party tracking or collecting user input without a documented purpose.
 
-You can navigate through the web page using the provided buttons and search bar. The page displays property listings with images, titles, descriptions, dates, and prices.
+See [docs/development.md](docs/development.md) and [docs/accessibility.md](docs/accessibility.md).
 
-## Contributing
+## Ownership
 
-Contributions are welcome! Feel free to submit issues or pull requests for any improvements or additional features you'd like to see.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
+Maintained by Brajesh Kumar (`brajesh31`).
