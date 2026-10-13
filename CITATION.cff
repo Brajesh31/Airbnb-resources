@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "Airbnb-style Web Page"
+message: "If you use this software, please cite the repository."
+type: software
+authors:
+  - family-names: Kumar
+    given-names: Brajesh
+    affiliation: "Independent"
+repository-code: "https://github.com/brajesh31/Airbnb-resources"
+abstract: "A static HTML and CSS accommodation marketplace interface exercise."
+keywords:
+  - HTML
+  - CSS
+  - static website
+  - responsive design
+license: MIT
+version: 0.1.0
