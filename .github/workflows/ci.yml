@@ -1,0 +1,91 @@
+name: Static site checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: static-checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate static site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate required files and local references
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const path = require('node:path');
+
+          const required = ['index.html', 'airbnbstyle.css', 'README.md', 'LICENSE', 'docs/README.md'];
+          const errors = [];
+          for (const file of required) {
+            if (!fs.existsSync(file)) errors.push(`Missing required file: ${file}`);
+            else if (!fs.readFileSync(file, 'utf8').trim()) errors.push(`Empty required file: ${file}`);
+          }
+
+          const html = fs.existsSync('index.html') ? fs.readFileSync('index.html', 'utf8') : '';
+          const css = fs.existsSync('airbnbstyle.css') ? fs.readFileSync('airbnbstyle.css', 'utf8') : '';
+
+          const assetRefs = [...html.matchAll(/(?:src|href)=["']([^"']+)["']/gi)]
+            .map(match => match[1])
+            .filter(value => !/^(https?:|mailto:|#|data:|javascript:)/i.test(value))
+            .filter(value => !value.startsWith('/'))
+            .map(value => value.split('#')[0].split('?')[0])
+            .filter(Boolean);
+
+          for (const ref of assetRefs) {
+            if (!fs.existsSync(path.resolve(ref))) errors.push(`Missing HTML asset: ${ref}`);
+          }
+
+          const cssRefs = [...css.matchAll(/url\((?:["']?)([^)"']+)(?:["']?)\)/gi)]
+            .map(match => match[1].trim())
+            .filter(value => !/^(https?:|data:|#)/i.test(value));
+          for (const ref of cssRefs) {
+            if (!fs.existsSync(path.resolve(ref))) errors.push(`Missing CSS asset: ${ref}`);
+          }
+
+          if (!/<title>[^<]+<\/title>/i.test(html)) errors.push('HTML page title is missing.');
+          if (!/name=["']viewport["']/i.test(html)) errors.push('Viewport meta tag is missing.');
+
+          const markdownFiles = [];
+          function walk(dir) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              if (['.git', 'node_modules'].includes(entry.name)) continue;
+              const full = path.join(dir, entry.name);
+              if (entry.isDirectory()) walk(full);
+              else if (/\.md$/i.test(entry.name)) markdownFiles.push(full);
+            }
+          }
+          walk('.');
+          for (const file of markdownFiles) {
+            const content = fs.readFileSync(file, 'utf8');
+            if (!content.trim()) errors.push(`Empty Markdown file: ${file}`);
+            const pattern = /!?\[[^\]]*\]\(([^)]+)\)/g;
+            for (const match of content.matchAll(pattern)) {
+              let target = match[1].trim().replace(/^<|>$/g, '');
+              if (!target || /^(https?:|mailto:|#|data:)/i.test(target)) continue;
+              target = target.split('#')[0].split('?')[0];
+              if (!target) continue;
+              const resolved = path.resolve(path.dirname(file), decodeURIComponent(target));
+              if (!fs.existsSync(resolved)) errors.push(`Broken Markdown link in ${file}: ${match[1]}`);
+            }
+          }
+
+          if (errors.length) {
+            for (const error of errors) console.error(`::error::${error}`);
+            process.exit(1);
+          }
+          console.log(`Validated static entry files, local assets, and ${markdownFiles.length} Markdown files.`);
+          NODE
