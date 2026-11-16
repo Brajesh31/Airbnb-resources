@@ -151,6 +151,14 @@ Start with [docs/README.md](docs/README.md) for the full documentation index.
 | [Deployment](docs/deployment.md) | Static hosting |
 | [FAQ](docs/faq.md) | Common questions |
 | [Troubleshooting](docs/troubleshooting.md) | Common local issues |
+| [HTML and CSS Style Guide](docs/html-css-style-guide.md) | Markup, selectors, responsive layout, and maintainability |
+| [Browser Testing](docs/browser-testing.md) | Manual browser checks and test evidence |
+| [Assets and Content](docs/assets-and-content.md) | Media formats, alternative text, and reuse rights |
+| [SEO and Metadata](docs/seo-and-metadata.md) | Titles, descriptions, canonical URLs, and social previews |
+| [Privacy](docs/privacy.md) | Current data-handling boundaries and future requirements |
+| [Security](docs/security.md) | Static-site and repository security practices |
+| [Quality Assurance](docs/quality-assurance.md) | Automated checks, manual validation, and quality gates |
+| [Release Process](docs/release-process.md) | Change management, releases, and rollback |
 
 ## 🗺️ Roadmap
 
