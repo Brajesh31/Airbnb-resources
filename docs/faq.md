@@ -1,13 +1,22 @@
-# FAQ
+# Frequently Asked Questions
 
-## Does this use a framework?
+## Is this the official Airbnb website?
+No. This is an independent educational interface inspired by accommodation marketplace layouts. It is not affiliated with or endorsed by Airbnb.
 
-No. It is a static HTML and CSS exercise.
+## Can a user book a property?
+No. The listing cards are static samples. There is no availability lookup, booking flow, checkout, or payment processing.
 
-## Does it connect to Airbnb?
+## Do search and filters work?
+They are presentational controls in the current HTML. No search or filter logic is implemented.
 
-No. It is an educational interface inspired by a marketplace layout.
+## What technologies are used?
+The page uses plain HTML and CSS with local SVG, JPEG and WebP assets. It has no framework or JavaScript application.
 
-## Is booking implemented?
+## Is a database required to run it?
+No. All content is static and no database connection exists.
 
-No. The page presents UI only and has no backend or payment flow.
+## How do I run it?
+See [Installation](installation.md). A local static server is recommended.
+
+## Can I use the bundled images and logos commercially?
+Do not assume that third-party brand artwork or imagery is reusable. Check ownership and licensing, and replace assets when rights are unclear.
