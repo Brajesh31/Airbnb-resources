@@ -7,24 +7,29 @@ assignees: []
 ---
 
 ## Problem or opportunity
+What limitation are you trying to address? Who is affected?
 
 ## Proposed change
+Describe the smallest useful change. Be specific about the expected result.
 
-## Expected benefit
+## User experience
+Explain what a visitor should see or be able to do after the change.
 
-## Scope
-- [ ] HTML / semantics
-- [ ] CSS / responsive layout
-- [ ] Accessibility
-- [ ] Documentation
-- [ ] Asset organization
-- [ ] Other
+## Accessibility considerations
+Describe keyboard behavior, focus management, accessible names, screen-reader announcements, and reduced-motion considerations where relevant.
 
-## Acceptance criteria
-- [ ]
-- [ ]
+## Scope and impact
+- Files or areas likely to change:
+- Does this require JavaScript?
+- Does this introduce an external dependency or service?
+- Does this collect or store user data?
+- Does this change the current static-site architecture?
 
-## Considerations
-Describe browser support, accessibility, asset licensing, privacy, and maintenance implications.
+## Alternatives considered
+Describe simpler approaches and why they are insufficient.
 
-Keep proposals proportionate to a static educational project. Real booking, payment, account, or property-management functionality requires a separate product and security design.
+## Validation plan
+How should the change be tested across browsers, viewports, keyboard navigation, and automated checks?
+
+## Important project boundary
+This is an independent educational interface. Requests for real booking, payments, user accounts, or live accommodation inventory require a separate product and architecture proposal. Do not assume those capabilities are part of the current project.
