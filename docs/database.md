@@ -1,5 +1,7 @@
 # Database
 
-This static site has no database. Listing content is embedded in HTML and images are stored as repository assets.
+There is no database in this repository. Listing cards are static HTML and the local images are stored as repository assets.
 
-If dynamic listings are added, document the schema, ownership, validation, caching, access control, and privacy policy before implementation.
+No user data, listing inventory, availability, reservations, profile information, or favorites are persisted.
+
+Before adding persistence, define the real feature, data owner, minimum required fields, retention period, access controls, deletion process, backup strategy, and privacy notice. Never collect payment or identity data in a frontend-only demo.
