@@ -159,6 +159,8 @@ Start with [docs/README.md](docs/README.md) for the full documentation index.
 | [Security](docs/security.md) | Static-site and repository security practices |
 | [Quality Assurance](docs/quality-assurance.md) | Automated checks, manual validation, and quality gates |
 | [Release Process](docs/release-process.md) | Change management, releases, and rollback |
+| [Performance](docs/performance.md) | Image, CSS, and static delivery performance |
+| [Maintenance](docs/maintenance.md) | Ongoing repository and workflow maintenance |
 
 ## 🗺️ Roadmap
 
