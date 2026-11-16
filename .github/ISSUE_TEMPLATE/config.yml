@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation and setup guidance
+    url: https://github.com/Brajesh31/Airbnb-resources/tree/main/docs
+    about: Review the project guides before opening a support request.
+  - name: Security reporting
+    url: https://github.com/Brajesh31/Airbnb-resources/security/advisories/new
+    about: Privately report security concerns. Do not post credentials or private data.
