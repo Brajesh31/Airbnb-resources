@@ -14,3 +14,7 @@ All entries describe repository changes, not official Airbnb product functionali
 ### Known limitations
 - Search, filters, favorites, profile controls, booking, accounts, payment, API and database behavior are not implemented.
 - Listing names, travel distances, dates and prices are sample content.
+- Removed tracked macOS metadata files and added ignore rules.
+- Added issue templates, repository CI checks and Dependabot configuration.
+- Fixed the README timestamp workflow to reduce concurrent push conflicts.
+- Updated CODEOWNERS, pull request guidance, environment example, and citation metadata.
