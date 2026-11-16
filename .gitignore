@@ -1,0 +1,30 @@
+# OS metadata
+.DS_Store
+**/.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE and editor settings
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+
+# Build and package output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
