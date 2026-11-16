@@ -44,7 +44,6 @@ jobs:
             .filter(value => !value.startsWith('/'))
             .map(value => value.split('#')[0].split('?')[0])
             .filter(Boolean);
-
           for (const ref of assetRefs) {
             if (!fs.existsSync(path.resolve(ref))) errors.push(`Missing HTML asset: ${ref}`);
           }
