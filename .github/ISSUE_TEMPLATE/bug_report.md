@@ -1,19 +1,32 @@
 ---
 name: Bug report
-about: Report a reproducible issue with the static interface
+about: Report a reproducible defect in the current static interface or repository automation
 title: "[BUG] "
 labels: ["bug", "triage"]
 assignees: []
 ---
 
 ## Summary
-Describe the issue clearly.
+Describe the problem in one or two sentences. Explain why it is a defect in existing behavior rather than a request for a feature that does not exist.
 
-## Where does it happen?
-- Page or file:
+## Affected area
+- [ ] HTML structure or content
+- [ ] CSS or responsive layout
+- [ ] Image, icon, or local asset
+- [ ] Accessibility or keyboard behavior
+- [ ] Documentation
+- [ ] GitHub Actions or repository configuration
+- [ ] Deployment
+- [ ] Other
+
+File or page:
+
+## Environment
 - Browser and version:
 - Operating system:
 - Viewport dimensions:
+- Browser zoom:
+- Commit or branch:
 
 ## Steps to reproduce
 1.
@@ -25,9 +38,12 @@ Describe the issue clearly.
 ## Actual result
 
 ## Evidence
-Attach a screenshot or sanitized console/network output. Do not include credentials or personal data.
+Attach a screenshot or sanitized Console/Network output. Remove passwords, tokens, personal data, and private URLs.
 
-## Checks
-- [ ] I reproduced this using a local static server.
+## Validation already performed
+- [ ] I reproduced the issue using a local static server.
 - [ ] I checked the browser console and network panel.
-- [ ] This report is about the current static UI, not a feature that is not implemented.
+- [ ] I checked the relevant local file path.
+- [ ] I confirmed this is not simply an unimplemented sample control.
+
+## Additional context
